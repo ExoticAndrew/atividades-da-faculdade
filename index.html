@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Desconto</title>
+</head>
+<body>
+    <h1>Calculadora de Desconto</h1>
+
+  
+    <label for="preco">Preço:</label>
+    <input type="number" id="preco" value="100">
+    
+    <label for="tipoCliente">Tipo de Cliente:</label>
+    <select id="tipoCliente">
+        <option value="regular">Regular</option>
+        <option value="membro" selected>Membro</option>
+    </select>
+    
+    <button onclick="exibirPrecoFinal()">Calcular Desconto</button>
+
+   
+    <p>Preço final com desconto: <span id="precoFinal"></span></p>
+
+    <script>
+       
+        function calcularDesconto(preco, tipoCliente) {
+            if (tipoCliente === "membro") {
+                return preco * 0.9; 
+            }
+            return preco; 
+        }
+
+       
+        function exibirPrecoFinal() {
+            const preco = parseFloat(document.getElementById("preco").value);
+            const tipoCliente = document.getElementById("tipoCliente").value;
+            const precoFinal = calcularDesconto(preco, tipoCliente);
+            
+            
+            document.getElementById("precoFinal").textContent = precoFinal.toFixed(2);
+        }
+    </script>
+</body>
+</html>
