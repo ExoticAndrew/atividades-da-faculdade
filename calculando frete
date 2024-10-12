@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Frete</title>
+</head>
+<body>
+    <h1>Cálculo de Frete</h1>
+
+    <label for="peso">Digite o Peso do Pacote (kg):</label>
+    <input type="number" id="peso" value="12">
+    
+    <button onclick="calcular()">Calcular Frete</button>
+
+    <p>Valor do Frete: R$ <span id="resultado"></span></p>
+
+    <script>
+        function calcularFrete(peso) {
+            if (peso <= 5) {
+                return 20; 
+            } else if (peso > 5 && peso <= 20) {
+                return 50; 
+            } else {
+                return 100; 
+            }
+        }
+
+        function calcular() {
+            const peso = parseFloat(document.getElementById("peso").value);
+            const valorFrete = calcularFrete(peso);
+            document.getElementById("resultado").textContent = valorFrete;
+        }
+    </script>
+</body>
+</html>
+
+
+      javascript
+
+      function calcularFrete(peso) {
+    if (peso <= 5) {
+        return 20; // Frete para até 5 kg
+    } else if (peso > 5 && peso <= 20) {
+        return 50; // Frete para entre 5 kg e 20 kg
+    } else {
+        return 100; // Frete para acima de 20 kg
+    }
+}
+
+
+const peso = 12;
+const valorFrete = calcularFrete(peso);
+console.log(`O valor do frete para um pacote de ${peso} kg é R$ ${valorFrete}.`);
+
