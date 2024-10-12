@@ -39,16 +39,17 @@
 ''java script''
 
 
-function calcularDesconto(preco, tipoCliente) {
-    if (tipoCliente === "membro") {
-        return preco * 0.9; // 10% de desconto
+function classificarNota(nota) {
+    if (nota >= 70) {
+        return "Aprovado";
+    } else if (nota >= 50 && nota <= 69) {
+        return "Recuperação";
+    } else {
+        return "Reprovado";
     }
-    return preco; 
 }
 
+const nota = 65;
+const resultado = classificarNota(nota);
+console.log(resultado); // Saída esperada: "Recuperação"
 
-let preco = 100;
-let tipoCliente = "membro";
-let precoFinal = calcularDesconto(preco, tipoCliente);
-
-console.log(precoFinal); // Saída esperada: 90
