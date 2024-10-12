@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada de Multiplicação</title>
+</head>
+<body>
+    <h1>Gerar Tabuada de Multiplicação</h1>
+
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" value="3">
+    
+    <button onclick="iniciarTabuada()">Gerar Tabuada</button>
+
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+        function gerarTabuada(numero) {
+            let resultado = [];
+            for 
+
+
+javascript
+
+
+function gerarTabuada(numero) {
+    let resultado = []; 
+    for (let i = 1; i <= 10; i++) {
+        resultado.push(`${numero} x ${i} = ${numero * i}`); 
+    }
+    console.log(resultado.join(", ")); 
+}
+
+
+gerarTabuada(3); // Saída: 3 x 1 = 3, 3 x 2 = 6, 3 x 3 = 9, 3 x 4 = 12, 3 x 5 = 15, 3 x 6 = 18, 3 x 7 = 21, 3 x 8 = 24, 3 x 9 = 27, 3 x 10 = 30
