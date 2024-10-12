@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressão de Números Pares</title>
+</head>
+<body>
+    <h1>Impressão de Números Pares</h1>
+
+    <label for="limite">Digite o limite:</label>
+    <input type="number" id="limite" value="10">
+    
+    <button onclick="imprimirParesLimite()">Imprimir Pares</button>
+
+    <p>Números Pares: <span id="resultado"></span></p>
+
+    <script>
+        function imprimirPares(limite) {
+            let pares = []; // Array para armazenar os números pares
+            for (let i = 0; i <= limite; i += 2) {
+                pares.push(i); // Adiciona o número par ao array
+            }
+            return pares.join(', '); // Retorna os números em formato de string
+        }
+
+        function imprimirParesLimite() {
+            const limite = parseInt(document.getElementById("limite").value);
+            const resultado = imprimirPares(limite);
+            document.getElementById("resultado").textContent = resultado; // Exibe os números pares na página
+        }
+javascript
+
+
+function imprimirPares(limite) {
+    for (let i = 0; i <= limite; i += 2) {
+        console.log(i);
+    }
+}
+
+imprimirPares(10); 
