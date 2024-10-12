@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Notas</title>
+</head>
+<body>
+    <h1>Classificação de Notas</h1>
+
+    <label for="nota">Digite a Nota do Aluno:</label>
+    <input type="number" id="nota" value="65">
+    
+    <button onclick="exibirClassificacao()">Classificar Nota</button>
+
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+        function classificarNota(nota) {
+            if (nota >= 70) {
+                return "Aprovado";
+            } else if (nota >= 50 && nota <= 69) {
+                return "Recuperação";
+            } else {
+                return "Reprovado";
+            }
+        }
+
+        function exibirClassificacao() {
+            const nota = parseFloat(document.getElementById("nota").value);
+            const resultado = classificarNota(nota);
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>
