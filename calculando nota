@@ -34,3 +34,21 @@
     </script>
 </body>
 </html>
+
+
+''java script''
+
+
+function calcularDesconto(preco, tipoCliente) {
+    if (tipoCliente === "membro") {
+        return preco * 0.9; // 10% de desconto
+    }
+    return preco; 
+}
+
+
+let preco = 100;
+let tipoCliente = "membro";
+let precoFinal = calcularDesconto(preco, tipoCliente);
+
+console.log(precoFinal); // Saída esperada: 90
