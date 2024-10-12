@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação de Temperatura</title>
+</head>
+<body>
+    <h1>Classificação de Temperatura</h1>
+
+    <label for="temperatura">Digite a Temperatura (°C):</label>
+    <input type="number" id="temperatura" value="22">
+    
+    <button onclick="classificar()">Classificar Temperatura</button>
+
+    <p>Classificação: <span id="resultado"></span></p>
+
+    <script>
+        function classificarTemperatura(temperatura) {
+            if (temperatura < 15) {
+                return "Frio"; // Temperaturas abaixo de 15°C
+            } else if (temperatura >= 15 && temperatura <= 25) {
+                return "Agradável"; // Temperaturas entre 15°C e 25°C
+            } else {
+                return "Quente"; // Temperaturas acima de 25°C
+            }
+        }
+
+        function classificar() {
+            const temperatura = parseFloat(document.getElementById("temperatura").value);
+            const classificacao = classificarTemperatura(temperatura);
+            document.getElementById("resultado").textContent = classificacao;
+     
+javascript
+
+
+
+function classificarTemperatura(temperatura) {
+    if (temperatura < 15) {
+        return "Frio"; // Temperaturas abaixo de 15°C
+    } else if (temperatura >= 15 && temperatura <= 25) {
+        return "Agradável"; // Temperaturas entre 15°C e 25°C
+    } else {
+        return "Quente"; // Temperaturas acima de 25°C
+    }
+}
+
+
+const temperatura = 22;
+const classificacao = classificarTemperatura(temperatura);
+console.log(`A temperatura de ${temperatura}°C é considerada: ${classificacao}.`);
