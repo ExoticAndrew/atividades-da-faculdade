@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Idade</title>
+</head>
+<body>
+    <h1>Verificação de Idade</h1>
+
+    <label for="idade">Digite a Idade:</label>
+    <input type="number" id="idade" value="20">
+    
+    <button onclick="exibirClassificacao()">Verificar Idade</button>
+
+    <p>Resultado: <span id="resultado"></span></p>
+
+    <script>
+        function verificarIdade(idade) {
+            if (idade < 18) {
+                return "Menor de idade";
+            } else if (idade >= 18 && idade < 65) {
+                return "Maior de idade";
+            } else {
+                return "Idoso";
+            }
+        }
+
+        function exibirClassificacao() {
+            const idade = parseInt(document.getElementById("idade").value);
+            const resultado = verificarIdade(idade);
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>
+
+
+javascript
+
+
+function verificarIdade(idade) {
+    if (idade < 18) {
+        return "Menor de idade";
+    } else if (idade >= 18 && idade < 65) {
+        return "Maior de idade";
+    } else {
+        return "Idoso";
+    }
+}
+
+function exibirClassificacao() {
+    const idade = parseInt(document.getElementById("idade").value);
+    const resultado = verificarIdade(idade);
+    document.getElementById("resultado").textContent = resultado;
+}
